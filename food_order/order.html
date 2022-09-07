@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Important to make website responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Website</title>
+
+    <script language="javascript" type="text/javascript">
+
+        function validationform()
+        {
+            var mail = document.getElementById("text").value;
+            var regx = /^([a-zA-Z09\._]+)@([a-zA-Z0-9])+.([a-z]+)(.[a-z]+)?$/
+            
+            if(document.formcal.fitem1.selectedIndex==0)
+            {
+                alert("Please select food item number");
+                return;
+            }
+            if(document.formcal.qty1.value.length==0)
+            {
+                alert("Please enter the quantity");
+                return;
+            }
+            if(document.formcal.fitem2.selectedIndex==0)
+            {
+                alert("Please select food item number");
+                return;
+            }
+            if(document.formcal.qty2.value.length==0)
+            {
+                alert("Please enter the quantity");
+                return;
+            }
+            if(document.formcal.fitem3.selectedIndex==0)
+            {
+                alert("Please select food item number");
+                return;
+            }
+            if(document.formcal.qty3.value.length==0)
+            {
+                alert("Please enter the quantity");
+                return;
+            }
+            if(document.formcal.fitem4.selectedIndex==0)
+            {
+                alert("Please select food item number");
+                return;
+            }
+            if(document.formcal.qty4.value.length==0)
+            {
+                alert("Please enter the quantity");
+                return;
+            }
+            if(document.formcal.fitem5.selectedIndex==0)
+            {
+                alert("Please select food item number");
+                return;
+            }
+            if(document.formcal.qty5.value.length==0)
+            {
+                alert("Please enter the quantity");
+                return;
+            }
+            if(document.formcal.full-name.value.length==0)
+            {   
+                alert("Please enter your name");
+                return;
+            }
+            if(isNaN(document.formcal.contact.value)||(document.formcal.contact.value.length==0))
+            {
+                alert("Telephone number should be numbers only");
+                return;
+            }
+            if(regx.text(mail) || document.formcal.email.value.length==0)
+            {   
+                alert("Enter the email address");
+                return;
+            }
+            else
+            {
+                alert("Please enter the valid email address")
+                return false;
+            }
+            if(document.formcal.address.value.length==0)
+            {   
+                alert("Please enter your address");
+                return;
+            }
+        }
+        </script>
+
+
+    <!-- Link our CSS file -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Navbar Section Starts Here -->
+    <section class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" title="Logo">
+                    <img src="images/cylone flavors.png" alt="Restaurant Logo" class="img-responsive">
+                </a>
+            </div>
+
+            <div class="menu text-right">
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="categories.html">Categories</a>
+                    </li>
+                    <li>
+                        <a href="http://localhost/food_order/category-foods.php">Foods</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                    <li>
+                        <a href="order.html">Order</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+    </section>
+    <!-- Navbar Section Ends Here -->
+
+    <!-- fOOD sEARCH Section Starts Here -->
+    <section class="food-search">
+        <div class="container">
+            
+            <h2 class="text-center text-white">Fill this form to confirm your order.</h2>
+
+            <form name="formcal" method="POST" action="http://localhost/ordercus.php" class="order">
+                <fieldset>
+                    <legend> Select Food Item No 1</legend>
+
+                    <div class="food-menu-img">
+                        <img src="images/menu-pizza.jpg" alt="Chicke Hawain Pizza" class="img-responsive img-curve">
+                    </div>
+    
+                    <div class="food-menu-desc">
+                        <div class="order-label">Enter food item number</div>
+                        <select name="fitem1" id="fitem1">
+                            <option value="00"></option>
+                            <option value="01">Number 01 - Vege Pizza Rs800.00</option>
+                            <option value="02">Number 02 - Cheese Pizza Rs900.00</option>
+                            <option value="03">Number 03 - Sausage Pizza Rs.1000.00</option>
+                            <option value="04">Number 04 - Chicken Pizza Rs.1100.00</option>
+                            <option value="05">Number 05 - Cheese Burger Rs.300.00</option>
+                            <option value="06">Number 06 - Chicken Burger Rs400.00</option>
+                            <option value="07">Number 07 - Beef Burger Rs500.00</option>
+                            <option value="08">Number 08 - Mix Burger Rs.600.00</option>
+                            <option value="09">Number 09 - Cup of Tea Rs50.00</option>
+                            <option value="10">Number 10 - Cup of Cofee Rs70.00</option>
+                            <option value="11">Number 11 - Orange Juice Rs200.00</option>
+                            <option value="12">Number 12 - Mango Juice Rs250.00</option>
+                            <option value="13">Number 13 - Green Salad Rs200.00</option>
+                            <option value="14">Number 14 - Fruits Salad Rs250.00</option>
+                            <option value="15">Number 15 - Cheese - Veg Mix Salad Rs300.00</option>
+                            <option value="16">Number 16 - Mix Salad Rs350.00</option>
+                        </select>
+
+                        <div class="order-label">Quantity</div>
+                        <input type="text" name="qty1" id="qty1" class="input-responsive" value="0" required>
+                        
+                    </div>
+
+                </fieldset>
+                <fieldset>
+                    <legend>Select Food Item No 2</legend>
+
+                    <div class="food-menu-img">
+                        <img src="images/menu-pizza.jpg" alt="Chicke Hawain Pizza" class="img-responsive img-curve">
+                    </div>
+    
+                    <div class="food-menu-desc">
+                        <div class="order-label">Enter food item number</div>
+                        <select name="fitem2" id="fitem2">
+                            <option value="00"></option>
+                            <option value="01">Number 01 - Vege Pizza Rs800.00</option>
+                            <option value="02">Number 02 - Cheese Pizza Rs900.00</option>
+                            <option value="03">Number 03 - Sausage Pizza Rs.1000.00</option>
+                            <option value="04">Number 04 - Chicken Pizza Rs.1100.00</option>
+                            <option value="05">Number 05 - Cheese Burger Rs.300.00</option>
+                            <option value="06">Number 06 - Chicken Burger Rs400.00</option>
+                            <option value="07">Number 07 - Beef Burger Rs500.00</option>
+                            <option value="08">Number 08 - Mix Burger Rs.600.00</option>
+                            <option value="09">Number 09 - Cup of Tea Rs50.00</option>
+                            <option value="10">Number 10 - Cup of Cofee Rs70.00</option>
+                            <option value="11">Number 11 - Orange Juice Rs200.00</option>
+                            <option value="12">Number 12 - Mango Juice Rs250.00</option>
+                            <option value="13">Number 13 - Green Salad Rs200.00</option>
+                            <option value="14">Number 14 - Fruits Salad Rs250.00</option>
+                            <option value="15">Number 15 - Cheese - Veg Mix Salad Rs300.00</option>
+                            <option value="16">Number 16 - Mix Salad Rs350.00</option>
+                        </select>
+
+                        <div class="order-label">Quantity</div>
+                        <input type="text" name="qty2" id="qty2" class="input-responsive" value="0" required>
+                        
+                    </div>
+
+                </fieldset>
+
+                <fieldset>
+                    <legend>Select Food Item No 3</legend>
+
+                    <div class="food-menu-img">
+                        <img src="images/menu-pizza.jpg" alt="Chicke Hawain Pizza" class="img-responsive img-curve">
+                    </div>
+    
+                    <div class="food-menu-desc">
+                        <div class="order-label">Enter food item number</div>
+                        <select name="fitem3" id="fitem3">
+                            <option value="00"></option>
+                            <option value="01">Number 01 - Vege Pizza Rs800.00</option>
+                            <option value="02">Number 02 - Cheese Pizza Rs900.00</option>
+                            <option value="03">Number 03 - Sausage Pizza Rs.1000.00</option>
+                            <option value="04">Number 04 - Chicken Pizza Rs.1100.00</option>
+                            <option value="05">Number 05 - Cheese Burger Rs.300.00</option>
+                            <option value="06">Number 06 - Chicken Burger Rs400.00</option>
+                            <option value="07">Number 07 - Beef Burger Rs500.00</option>
+                            <option value="08">Number 08 - Mix Burger Rs.600.00</option>
+                            <option value="09">Number 09 - Cup of Tea Rs50.00</option>
+                            <option value="10">Number 10 - Cup of Cofee Rs70.00</option>
+                            <option value="11">Number 11 - Orange Juice Rs200.00</option>
+                            <option value="12">Number 12 - Mango Juice Rs250.00</option>
+                            <option value="13">Number 13 - Green Salad Rs200.00</option>
+                            <option value="14">Number 14 - Fruits Salad Rs250.00</option>
+                            <option value="15">Number 15 - Cheese - Veg Mix Salad Rs300.00</option>
+                            <option value="16">Number 16 - Mix Salad Rs350.00</option>
+                        </select>
+                        <div class="order-label">Quantity</div>
+                        <input type="text" name="qty3" id="qty3" class="input-responsive" value="0" required>
+                        
+                    </div>
+
+                </fieldset>
+
+                <fieldset>
+                    <legend>Select Food Item No 4</legend>
+
+                    <div class="food-menu-img">
+                        <img src="images/menu-pizza.jpg" alt="Chicke Hawain Pizza" class="img-responsive img-curve">
+                    </div>
+    
+                    <div class="food-menu-desc">
+                        <div class="order-label">Enter food item number</div>
+                        <select name="fitem4" id="fitem4">
+                            <option value="00"></option>
+                            <option value="01">Number 01 - Vege Pizza Rs800.00</option>
+                            <option value="02">Number 02 - Cheese Pizza Rs900.00</option>
+                            <option value="03">Number 03 - Sausage Pizza Rs.1000.00</option>
+                            <option value="04">Number 04 - Chicken Pizza Rs.1100.00</option>
+                            <option value="05">Number 05 - Cheese Burger Rs.300.00</option>
+                            <option value="06">Number 06 - Chicken Burger Rs400.00</option>
+                            <option value="07">Number 07 - Beef Burger Rs500.00</option>
+                            <option value="08">Number 08 - Mix Burger Rs.600.00</option>
+                            <option value="09">Number 09 - Cup of Tea Rs50.00</option>
+                            <option value="10">Number 10 - Cup of Cofee Rs70.00</option>
+                            <option value="11">Number 11 - Orange Juice Rs200.00</option>
+                            <option value="12">Number 12 - Mango Juice Rs250.00</option>
+                            <option value="13">Number 13 - Green Salad Rs200.00</option>
+                            <option value="14">Number 14 - Fruits Salad Rs250.00</option>
+                            <option value="15">Number 15 - Cheese - Veg Mix Salad Rs300.00</option>
+                            <option value="16">Number 16 - Mix Salad Rs350.00</option>
+                        </select>
+                        <div class="order-label">Quantity</div>
+                        <input type="text" name="qty4" id="qty4" class="input-responsive" value="0" required>
+                        
+                    </div>
+
+                </fieldset>
+
+                <fieldset>
+                    <legend>Select Food Item No 5</legend>
+
+                    <div class="food-menu-img">
+                        <img src="images/menu-pizza.jpg" alt="Chicke Hawain Pizza" class="img-responsive img-curve">
+                    </div>
+    
+                    <div class="food-menu-desc">
+                        <div class="order-label">Enter food item number</div>
+                        <select name="fitem5" id="fitem5">
+                            <option value="00"></option>
+                            <option value="01">Number 01 - Vege Pizza Rs800.00</option>
+                            <option value="02">Number 02 - Cheese Pizza Rs900.00</option>
+                            <option value="03">Number 03 - Sausage Pizza Rs.1000.00</option>
+                            <option value="04">Number 04 - Chicken Pizza Rs.1100.00</option>
+                            <option value="05">Number 05 - Cheese Burger Rs.300.00</option>
+                            <option value="06">Number 06 - Chicken Burger Rs400.00</option>
+                            <option value="07">Number 07 - Beef Burger Rs500.00</option>
+                            <option value="08">Number 08 - Mix Burger Rs.600.00</option>
+                            <option value="09">Number 09 - Cup of Tea Rs50.00</option>
+                            <option value="10">Number 10 - Cup of Cofee Rs70.00</option>
+                            <option value="11">Number 11 - Orange Juice Rs200.00</option>
+                            <option value="12">Number 12 - Mango Juice Rs250.00</option>
+                            <option value="13">Number 13 - Green Salad Rs200.00</option>
+                            <option value="14">Number 14 - Fruits Salad Rs250.00</option>
+                            <option value="15">Number 15 - Cheese - Veg Mix Salad Rs300.00</option>
+                            <option value="16">Number 16 - Mix Salad Rs350.00</option>
+                        </select>
+                        <div class="order-label">Quantity</div>
+                        <input type="text" name="qty5" id="qty5" class="input-responsive" value="0" required>
+                        
+                    </div>
+
+                </fieldset>
+
+                <fieldset>
+                    <legend>Customer Bill</legend>
+
+                    <div class="food-menu-img">
+                        <img src="images/menu-pizza.jpg" alt="Chicke Hawain Pizza" class="img-responsive img-curve">
+                    </div>
+    
+                    <div class="food-menu-desc">
+                        <div class="order-label"></div>
+                        <div class="order-label">Total Amount :</div>
+                        <input type="text" name="totalamount" >
+                        <input type="button" name="Calculate" value="Calculate" onclick = "cal()" class="btn btn-primary">
+                        
+                    </div>
+                </fieldset>
+                
+                <fieldset>
+                    <legend>Delivery Details</legend>
+                    <div class="order-label">Full Name</div>
+                    <input type="text" name="full-name" placeholder="E.g. Savidu Ashen" class="input-responsive" required>
+
+                    <div class="order-label">Phone Number</div>
+                    <input type="tel" name="contact" placeholder="E.g. +947xxxxxxx" class="input-responsive" required>
+
+                    <div class="order-label">Email</div>
+                    <input type="email" name="email" placeholder="E.g. youremail@gmail.com" class="input-responsive" required>
+
+                    <div class="order-label">Address</div>
+                    <textarea name="address" rows="10" placeholder="E.g. Street No/ City" class="input-responsive" required></textarea>
+
+                    <input type="submit" name="submit" value="Confirm Order" onclick="validationform()" class="btn btn-primary">
+                </fieldset>
+
+            </form>
+
+        </div>
+    </section>
+    <!-- fOOD sEARCH Section Ends Here -->
+
+    <!-- social Section Starts Here -->
+    <section class="social">
+        <div class="container text-center">
+            <ul>
+                <li>
+                    <a href="#"><img src="https://img.icons8.com/fluent/50/000000/facebook-new.png"/></a>
+                </li>
+                <li>
+                    <a href="#"><img src="https://img.icons8.com/fluent/48/000000/instagram-new.png"/></a>
+                </li>
+                <li>
+                    <a href="#"><img src="https://img.icons8.com/fluent/48/000000/twitter.png"/></a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!-- social Section Ends Here -->
+
+    <!-- footer Section Starts Here -->
+    <section class="footer">
+        <div class="container text-center">
+            <p>All rights reserved. Designed By <a href="#">සිලෝන් TEAM</a></p>
+        </div>
+
+        <div class="container">
+
+            <div class="box-3">
+                <h3>Locations</h3>
+                <a href="#">Colombo</a><br>
+                <a href="#">Kandy</a><br>
+                <a href="#">Kurunagala</a><br>
+                <a href="#">Jaffna</a><br>
+                <a href="#">Ampara</a>
+            </div>
+    
+            <div class="box-3">
+                <h3>Quick links</h3>
+                <a href="#">Home</a>
+                <a href="categories.html">Categories</a><br>
+                <a href="category-foods.html">Foods</a><br>
+                <a href="contact.html">Contact</a><br>
+                <a href="order.html">Order</a>
+            </div>
+    
+            <div class="box-3">
+                <h3>Contact info</h3>
+                <a href="#">0782367098</a><br>
+                <a href="#">0783267098</a><br>
+                <a href="#">0782370098</a><br>
+                <a href="#">ceylonFlavorsS@gmail.com</a>
+                
+            </div>
+    
+        </div>
+    </section>
+    <!-- footer Section Ends Here -->
+
+    
+    <div class="loader-container">
+        <img src="images/loade.gif" alt="">
+    </div>
+
+
+    <script src="script.js"></script>
+    <script src="cal.js"></script>
+
+</body>
+</html>
